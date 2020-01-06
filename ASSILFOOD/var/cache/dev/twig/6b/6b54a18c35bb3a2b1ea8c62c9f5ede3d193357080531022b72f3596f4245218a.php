@@ -46,26 +46,63 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
         // line 1
         echo "<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
+<head>
+    <meta charset=\"UTF-8\">
+    <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        ";
-        // line 6
-        $this->displayBlock('stylesheets', $context, $blocks);
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    ";
         // line 7
-        echo "    </head>
-    <body>
-        ";
-        // line 9
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 8
+        echo "
+</head>
+<body>
+<nav class=\"navbar navbar-expand-lg navbar-dark color: bg-primary\">
+    <a class=\"navbar-brand\" href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">AL2000</a>
+
+    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+        <form class=\"form-inline my-2 my-lg-0\">
+            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher votre Film\" aria-label=\"Search\">
+            <button class=\"btn btn-outline-light my-2 my-sm-0\" type=\"submit\" >Rechercher</button>
+        </form>
+    </div>
+    <li class=\"nav-item\">
+        <a class=\"btn btn-outline-light\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"> Sabonner </a>
+        <a class=\"btn btn-outline-light\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"> Connexion </a>
+        <a class=\"btn btn-outline-light\" href=\"";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Crud");
+        echo "\"> Admin </a>
+
+    </li>
+</nav>
+";
+        // line 27
         $this->displayBlock('body', $context, $blocks);
-        // line 10
-        echo "        ";
+        // line 28
+        echo "
+";
+        // line 29
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
-        echo "    </body>
+        // line 30
+        echo "<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
+
+</body>
 </html>
 ";
         
@@ -95,7 +132,7 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
 
     }
 
-    // line 6
+    // line 7
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -113,7 +150,7 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
 
     }
 
-    // line 9
+    // line 27
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -123,6 +160,7 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        echo " ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -131,7 +169,7 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
 
     }
 
-    // line 10
+    // line 29
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -141,6 +179,7 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
+        echo " ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -154,24 +193,53 @@ class __TwigTemplate_b623964c32092baf5ad9292b726c7c9667419510b62d59a8b8117367ad3
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  135 => 10,  117 => 9,  99 => 6,  80 => 5,  68 => 11,  65 => 10,  63 => 9,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  173 => 29,  154 => 27,  136 => 7,  117 => 5,  100 => 30,  98 => 29,  95 => 28,  93 => 27,  86 => 23,  82 => 22,  78 => 21,  66 => 12,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset=\"UTF-8\">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    {% block stylesheets %}{% endblock %}
+
+</head>
+<body>
+<nav class=\"navbar navbar-expand-lg navbar-dark color: bg-primary\">
+    <a class=\"navbar-brand\" href=\"{{ path('home') }}\">AL2000</a>
+
+    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+        <form class=\"form-inline my-2 my-lg-0\">
+            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Rechercher votre Film\" aria-label=\"Search\">
+            <button class=\"btn btn-outline-light my-2 my-sm-0\" type=\"submit\" >Rechercher</button>
+        </form>
+    </div>
+    <li class=\"nav-item\">
+        <a class=\"btn btn-outline-light\" href=\"{{ path('home') }}\"> Sabonner </a>
+        <a class=\"btn btn-outline-light\" href=\"{{ path('home') }}\"> Connexion </a>
+        <a class=\"btn btn-outline-light\" href=\"{{ path('Crud') }}\"> Admin </a>
+
+    </li>
+</nav>
+{% block body %} {% endblock %}
+
+{% block javascripts %} {% endblock %}
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
+
+</body>
 </html>
 ", "base.html.twig", "E:\\Assil kool\\Projet Site\\Site_web\\ASSILFOOD\\templates\\base.html.twig");
     }
