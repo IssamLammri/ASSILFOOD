@@ -305,11 +305,46 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>E:\Assil kool\Projet Site\Site_web\ASSILFOOD\var\log/dev.log</argument>
     </service>
+    <service id="App\Controller\AppendiceController" class="App\Controller\AppendiceController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\AppendiceController"/>
+      </call>
+    </service>
     <service id="App\Controller\CRUDController" class="App\Controller\CRUDController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.SXie53V.App\Controller\CRUDController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ClientActiveController" class="App\Controller\ClientActiveController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\ClientActiveController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ClientPassiveController" class="App\Controller\ClientPassiveController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\ClientPassiveController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CommandeController" class="App\Controller\CommandeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\CommandeController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ComposantsController" class="App\Controller\ComposantsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\ComposantsController"/>
       </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
@@ -318,6 +353,41 @@
       <call method="setContainer">
         <argument type="service" id=".service_locator.SXie53V.App\Controller\HomeController"/>
       </call>
+    </service>
+    <service id="App\Controller\PlatController" class="App\Controller\PlatController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\PlatController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ReapsController" class="App\Controller\ReapsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SXie53V.App\Controller\ReapsController"/>
+      </call>
+    </service>
+    <service id="App\Form\AppendiceType" class="App\Form\AppendiceType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ClientActiveType" class="App\Form\ClientActiveType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ClientPassiveType" class="App\Form\ClientPassiveType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CommandeType" class="App\Form\CommandeType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ComposantsType" class="App\Form\ComposantsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PlatType" class="App\Form\PlatType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ReapsType" class="App\Form\ReapsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory" public="false"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener" public="false">
@@ -720,9 +790,17 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AppendiceType</argument>
+        <argument>App\Form\ClientActiveType</argument>
+        <argument>App\Form\ClientPassiveType</argument>
+        <argument>App\Form\CommandeType</argument>
+        <argument>App\Form\ComposantsType</argument>
+        <argument>App\Form\PlatType</argument>
+        <argument>App\Form\ReapsType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1051,7 +1129,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.SFX6J7Y"/>
+      <argument type="service" id=".service_locator.OPLlI84"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4530,12 +4608,47 @@
       <tag name="maker.command"/>
       <argument>E:\Assil kool\Projet Site\Site_web\ASSILFOOD</argument>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AppendiceController" class="App\Controller\AppendiceController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AppendiceController" class="App\Controller\AppendiceController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AppendiceController" class="App\Controller\AppendiceController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CRUDController" class="App\Controller\CRUDController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CRUDController" class="App\Controller\CRUDController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CRUDController" class="App\Controller\CRUDController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ClientActiveController" class="App\Controller\ClientActiveController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ClientActiveController" class="App\Controller\ClientActiveController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ClientActiveController" class="App\Controller\ClientActiveController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ClientPassiveController" class="App\Controller\ClientPassiveController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ClientPassiveController" class="App\Controller\ClientPassiveController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ClientPassiveController" class="App\Controller\ClientPassiveController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CommandeController" class="App\Controller\CommandeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CommandeController" class="App\Controller\CommandeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CommandeController" class="App\Controller\CommandeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ComposantsController" class="App\Controller\ComposantsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ComposantsController" class="App\Controller\ComposantsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ComposantsController" class="App\Controller\ComposantsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PlatController" class="App\Controller\PlatController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PlatController" class="App\Controller\PlatController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PlatController" class="App\Controller\PlatController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReapsController" class="App\Controller\ReapsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReapsController" class="App\Controller\ReapsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReapsController" class="App\Controller\ReapsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AppendiceType" class="App\Form\AppendiceType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AppendiceType" class="App\Form\AppendiceType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClientActiveType" class="App\Form\ClientActiveType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ClientActiveType" class="App\Form\ClientActiveType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClientPassiveType" class="App\Form\ClientPassiveType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ClientPassiveType" class="App\Form\ClientPassiveType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CommandeType" class="App\Form\CommandeType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CommandeType" class="App\Form\CommandeType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ComposantsType" class="App\Form\ComposantsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ComposantsType" class="App\Form\ComposantsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PlatType" class="App\Form\PlatType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PlatType" class="App\Form\PlatType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReapsType" class="App\Form\ReapsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ReapsType" class="App\Form\ReapsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.CmORmuK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4719,9 +4832,94 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.I3K77mT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.EvTxzLG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="appendice" type="service" id=".errored..service_locator.EvTxzLG.App\Entity\Appendice"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dDMN2AU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="clientActive" type="service" id=".errored..service_locator.dDMN2AU.App\Entity\ClientActive"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MbE4y_b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="clientPassive" type="service" id=".errored..service_locator.MbE4y_b.App\Entity\ClientPassive"/>
+      </argument>
+    </service>
+    <service id=".service_locator.e1rdezy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="commande" type="service" id=".errored..service_locator.e1rdezy.App\Entity\Commande"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jNnCkJr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="composant" type="service" id=".errored..service_locator.jNnCkJr.App\Entity\Composants"/>
+      </argument>
+    </service>
+    <service id=".service_locator.IeOWUbm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="plat" type="service" id=".errored..service_locator.IeOWUbm.App\Entity\Plat"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Qi7fN3P" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reap" type="service" id=".errored..service_locator.Qi7fN3P.App\Entity\Reaps"/>
+      </argument>
+    </service>
+    <service id=".service_locator.nwHuW0W" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\AppendiceController::delete" type="service" id=".service_locator.EvTxzLG"/>
+        <argument key="App\Controller\AppendiceController::edit" type="service" id=".service_locator.EvTxzLG"/>
+        <argument key="App\Controller\AppendiceController::show" type="service" id=".service_locator.EvTxzLG"/>
+        <argument key="App\Controller\ClientActiveController::delete" type="service" id=".service_locator.dDMN2AU"/>
+        <argument key="App\Controller\ClientActiveController::edit" type="service" id=".service_locator.dDMN2AU"/>
+        <argument key="App\Controller\ClientActiveController::show" type="service" id=".service_locator.dDMN2AU"/>
+        <argument key="App\Controller\ClientPassiveController::delete" type="service" id=".service_locator.MbE4y_b"/>
+        <argument key="App\Controller\ClientPassiveController::edit" type="service" id=".service_locator.MbE4y_b"/>
+        <argument key="App\Controller\ClientPassiveController::show" type="service" id=".service_locator.MbE4y_b"/>
+        <argument key="App\Controller\CommandeController::delete" type="service" id=".service_locator.e1rdezy"/>
+        <argument key="App\Controller\CommandeController::edit" type="service" id=".service_locator.e1rdezy"/>
+        <argument key="App\Controller\CommandeController::show" type="service" id=".service_locator.e1rdezy"/>
+        <argument key="App\Controller\ComposantsController::delete" type="service" id=".service_locator.jNnCkJr"/>
+        <argument key="App\Controller\ComposantsController::edit" type="service" id=".service_locator.jNnCkJr"/>
+        <argument key="App\Controller\ComposantsController::show" type="service" id=".service_locator.jNnCkJr"/>
+        <argument key="App\Controller\PlatController::delete" type="service" id=".service_locator.IeOWUbm"/>
+        <argument key="App\Controller\PlatController::edit" type="service" id=".service_locator.IeOWUbm"/>
+        <argument key="App\Controller\PlatController::show" type="service" id=".service_locator.IeOWUbm"/>
+        <argument key="App\Controller\ReapsController::delete" type="service" id=".service_locator.Qi7fN3P"/>
+        <argument key="App\Controller\ReapsController::edit" type="service" id=".service_locator.Qi7fN3P"/>
+        <argument key="App\Controller\ReapsController::show" type="service" id=".service_locator.Qi7fN3P"/>
+        <argument key="App\Controller\AppendiceController:delete" type="service" id=".service_locator.EvTxzLG"/>
+        <argument key="App\Controller\AppendiceController:edit" type="service" id=".service_locator.EvTxzLG"/>
+        <argument key="App\Controller\AppendiceController:show" type="service" id=".service_locator.EvTxzLG"/>
+        <argument key="App\Controller\ClientActiveController:delete" type="service" id=".service_locator.dDMN2AU"/>
+        <argument key="App\Controller\ClientActiveController:edit" type="service" id=".service_locator.dDMN2AU"/>
+        <argument key="App\Controller\ClientActiveController:show" type="service" id=".service_locator.dDMN2AU"/>
+        <argument key="App\Controller\ClientPassiveController:delete" type="service" id=".service_locator.MbE4y_b"/>
+        <argument key="App\Controller\ClientPassiveController:edit" type="service" id=".service_locator.MbE4y_b"/>
+        <argument key="App\Controller\ClientPassiveController:show" type="service" id=".service_locator.MbE4y_b"/>
+        <argument key="App\Controller\CommandeController:delete" type="service" id=".service_locator.e1rdezy"/>
+        <argument key="App\Controller\CommandeController:edit" type="service" id=".service_locator.e1rdezy"/>
+        <argument key="App\Controller\CommandeController:show" type="service" id=".service_locator.e1rdezy"/>
+        <argument key="App\Controller\ComposantsController:delete" type="service" id=".service_locator.jNnCkJr"/>
+        <argument key="App\Controller\ComposantsController:edit" type="service" id=".service_locator.jNnCkJr"/>
+        <argument key="App\Controller\ComposantsController:show" type="service" id=".service_locator.jNnCkJr"/>
+        <argument key="App\Controller\PlatController:delete" type="service" id=".service_locator.IeOWUbm"/>
+        <argument key="App\Controller\PlatController:edit" type="service" id=".service_locator.IeOWUbm"/>
+        <argument key="App\Controller\PlatController:show" type="service" id=".service_locator.IeOWUbm"/>
+        <argument key="App\Controller\ReapsController:delete" type="service" id=".service_locator.Qi7fN3P"/>
+        <argument key="App\Controller\ReapsController:edit" type="service" id=".service_locator.Qi7fN3P"/>
+        <argument key="App\Controller\ReapsController:show" type="service" id=".service_locator.Qi7fN3P"/>
+      </argument>
     </service>
     <service id=".service_locator.Y7gDuDN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -4782,9 +4980,16 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.SFX6J7Y" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.OPLlI84" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AppendiceType" type="service" id="App\Form\AppendiceType"/>
+        <argument key="App\Form\ClientActiveType" type="service" id="App\Form\ClientActiveType"/>
+        <argument key="App\Form\ClientPassiveType" type="service" id="App\Form\ClientPassiveType"/>
+        <argument key="App\Form\CommandeType" type="service" id="App\Form\CommandeType"/>
+        <argument key="App\Form\ComposantsType" type="service" id="App\Form\ComposantsType"/>
+        <argument key="App\Form\PlatType" type="service" id="App\Form\PlatType"/>
+        <argument key="App\Form\ReapsType" type="service" id="App\Form\ReapsType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>
@@ -4950,6 +5155,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
+    <service id=".service_locator.I3K77mT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -4998,15 +5207,57 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.SXie53V.App\Controller\AppendiceController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AppendiceController"/>
+      <argument>App\Controller\AppendiceController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
     <service id=".service_locator.SXie53V.App\Controller\CRUDController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\CRUDController"/>
       <argument>App\Controller\CRUDController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.SXie53V" method="withContext"/>
     </service>
+    <service id=".service_locator.SXie53V.App\Controller\ClientActiveController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ClientActiveController"/>
+      <argument>App\Controller\ClientActiveController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
+    <service id=".service_locator.SXie53V.App\Controller\ClientPassiveController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ClientPassiveController"/>
+      <argument>App\Controller\ClientPassiveController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
+    <service id=".service_locator.SXie53V.App\Controller\CommandeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CommandeController"/>
+      <argument>App\Controller\CommandeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
+    <service id=".service_locator.SXie53V.App\Controller\ComposantsController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ComposantsController"/>
+      <argument>App\Controller\ComposantsController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
     <service id=".service_locator.SXie53V.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
+    <service id=".service_locator.SXie53V.App\Controller\PlatController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\PlatController"/>
+      <argument>App\Controller\PlatController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SXie53V" method="withContext"/>
+    </service>
+    <service id=".service_locator.SXie53V.App\Controller\ReapsController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ReapsController"/>
+      <argument>App\Controller\ReapsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.SXie53V" method="withContext"/>
     </service>
@@ -5149,12 +5400,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.I3K77mT"/>
+      <argument type="service" id=".service_locator.nwHuW0W"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.I3K77mT"/>
+      <argument type="service" id=".service_locator.nwHuW0W"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5164,6 +5415,13 @@
       </call>
       <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
     </service>
+    <service id=".errored..service_locator.EvTxzLG.App\Entity\Appendice" class="App\Entity\Appendice"/>
+    <service id=".errored..service_locator.dDMN2AU.App\Entity\ClientActive" class="App\Entity\ClientActive"/>
+    <service id=".errored..service_locator.MbE4y_b.App\Entity\ClientPassive" class="App\Entity\ClientPassive"/>
+    <service id=".errored..service_locator.e1rdezy.App\Entity\Commande" class="App\Entity\Commande"/>
+    <service id=".errored..service_locator.jNnCkJr.App\Entity\Composants" class="App\Entity\Composants"/>
+    <service id=".errored..service_locator.IeOWUbm.App\Entity\Plat" class="App\Entity\Plat"/>
+    <service id=".errored..service_locator.Qi7fN3P.App\Entity\Reaps" class="App\Entity\Reaps"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.YQT1s2V"/>
       <argument type="collection">
@@ -5531,7 +5789,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.I3K77mT"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.nwHuW0W"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

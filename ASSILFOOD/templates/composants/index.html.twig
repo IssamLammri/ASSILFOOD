@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Composants index{% endblock %}
+
+{% block body %}
+    <h1>Composants index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdComposants</th>
+                <th>NomComposants</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for composant in composants %}
+            <tr>
+                <td>{{ composant.idComposants }}</td>
+                <td>{{ composant.nomComposants }}</td>
+                <td>
+                    <a href="{{ path('composants_show', {'idComposants': composant.idComposants}) }}">show</a>
+                    <a href="{{ path('composants_edit', {'idComposants': composant.idComposants}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('composants_new') }}">Create new</a>
+{% endblock %}

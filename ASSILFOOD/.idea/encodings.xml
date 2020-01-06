@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/Controller/CRUDController.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/Entity/ClientActive.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/Entity/Commande.php" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/templates/CRUD" charset="windows-1252" />
   </component>
 </project>

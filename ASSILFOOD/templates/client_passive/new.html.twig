@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ClientPassive{% endblock %}
+
+{% block body %}
+    <h1>Create new ClientPassive</h1>
+
+    {{ include('client_passive/_form.html.twig') }}
+
+    <a href="{{ path('client_passive_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientPassive index{% endblock %}
+
+{% block body %}
+    <h1>ClientPassive index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdClientPassive</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>NTelephone</th>
+                <th>Adresse</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client_passive in client_passives %}
+            <tr>
+                <td>{{ client_passive.idClientPassive }}</td>
+                <td>{{ client_passive.nom }}</td>
+                <td>{{ client_passive.prenom }}</td>
+                <td>{{ client_passive.nTelephone }}</td>
+                <td>{{ client_passive.adresse }}</td>
+                <td>
+                    <a href="{{ path('client_passive_show', {'idClientPassive': client_passive.idClientPassive}) }}">show</a>
+                    <a href="{{ path('client_passive_edit', {'idClientPassive': client_passive.idClientPassive}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_passive_new') }}">Create new</a>
+{% endblock %}

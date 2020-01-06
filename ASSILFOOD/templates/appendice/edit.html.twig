@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Appendice{% endblock %}
+
+{% block body %}
+    <h1>Edit Appendice</h1>
+
+    {{ include('appendice/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('appendice_index') }}">back to list</a>
+
+    {{ include('appendice/_delete_form.html.twig') }}
+{% endblock %}

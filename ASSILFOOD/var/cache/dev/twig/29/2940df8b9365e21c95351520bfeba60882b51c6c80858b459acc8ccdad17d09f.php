@@ -95,23 +95,23 @@ class __TwigTemplate_b21590ca7fe204e41114d282f010942493fc887ac08b331cd5a960b8092
                 <h1> CRUD </h1>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appendice_index");
         echo "\"> Appendice </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 15
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_active_index");
         echo "\"> client_active </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 16
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_passive_index");
         echo "\"> \tclient_passive </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 17
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande_index");
         echo "\"> commande </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 18
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("composants_index");
         echo "\"> composants </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 19
@@ -123,11 +123,11 @@ class __TwigTemplate_b21590ca7fe204e41114d282f010942493fc887ac08b331cd5a960b8092
         echo "\"> \textensions </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("plat_index");
         echo "\"> \tplat </a>
                 <a class=\"btn btn-outline-dark\" href=\"";
         // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reaps_index");
         echo "\"> \treaps </a>
 
             </div>
@@ -172,15 +172,15 @@ class __TwigTemplate_b21590ca7fe204e41114d282f010942493fc887ac08b331cd5a960b8092
     <div class=\"card bg-white text-dark\">
             <div class=\"container\">
                 <h1> CRUD </h1>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> Appendice </a>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> client_active </a>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> \tclient_passive </a>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> commande </a>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> composants </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('appendice_index') }}\"> Appendice </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('client_active_index') }}\"> client_active </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('client_passive_index') }}\"> \tclient_passive </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('commande_index') }}\"> commande </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('composants_index') }}\"> composants </a>
                 <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> \tcomposants_repas </a>
                 <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> \textensions </a>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> \tplat </a>
-                <a class=\"btn btn-outline-dark\" href=\"{{ path('home') }}\"> \treaps </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('plat_index') }}\"> \tplat </a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('reaps_index') }}\"> \treaps </a>
 
             </div>
     </div>

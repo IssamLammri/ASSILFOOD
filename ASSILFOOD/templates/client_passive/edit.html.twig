@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ClientPassive{% endblock %}
+
+{% block body %}
+    <h1>Edit ClientPassive</h1>
+
+    {{ include('client_passive/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('client_passive_index') }}">back to list</a>
+
+    {{ include('client_passive/_delete_form.html.twig') }}
+{% endblock %}

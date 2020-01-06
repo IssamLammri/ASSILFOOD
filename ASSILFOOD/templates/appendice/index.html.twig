@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appendice index{% endblock %}
+
+{% block body %}
+    <h1>Appendice index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdAppendice</th>
+                <th>NomAppendice</th>
+                <th>PrixAchat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for appendice in appendices %}
+            <tr>
+                <td>{{ appendice.idAppendice }}</td>
+                <td>{{ appendice.nomAppendice }}</td>
+                <td>{{ appendice.prixAchat }}</td>
+                <td>
+                    <a href="{{ path('appendice_show', {'idAppendice': appendice.idAppendice}) }}">show</a>
+                    <a href="{{ path('appendice_edit', {'idAppendice': appendice.idAppendice}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('appendice_new') }}">Create new</a>
+{% endblock %}

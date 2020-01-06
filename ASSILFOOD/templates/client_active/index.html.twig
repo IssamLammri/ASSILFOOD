@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientActive index{% endblock %}
+
+{% block body %}
+    <h1>ClientActive index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Password</th>
+                <th>NumeroIdentitã©</th>
+                <th>TypeIdentitã©</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client_active in client_actives %}
+            <tr>
+                <td>{{ client_active.email }}</td>
+                <td>{{ client_active.password }}</td>
+                <td>{{ client_active.numeroIdentitã© }}</td>
+                <td>{{ client_active.typeIdentitã© }}</td>
+                <td>
+                    <a href="{{ path('client_active_show', {'idClient': client_active.idClient}) }}">show</a>
+                    <a href="{{ path('client_active_edit', {'idClient': client_active.idClient}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_active_new') }}">Create new</a>
+{% endblock %}

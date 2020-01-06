@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appendice{% endblock %}
+
+{% block body %}
+    <h1>Appendice</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdAppendice</th>
+                <td>{{ appendice.idAppendice }}</td>
+            </tr>
+            <tr>
+                <th>NomAppendice</th>
+                <td>{{ appendice.nomAppendice }}</td>
+            </tr>
+            <tr>
+                <th>PrixAchat</th>
+                <td>{{ appendice.prixAchat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('appendice_index') }}">back to list</a>
+
+    <a href="{{ path('appendice_edit', {'idAppendice': appendice.idAppendice}) }}">edit</a>
+
+    {{ include('appendice/_delete_form.html.twig') }}
+{% endblock %}

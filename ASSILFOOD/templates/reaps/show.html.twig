@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reaps{% endblock %}
+
+{% block body %}
+    <h1>Reaps</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdRepas</th>
+                <td>{{ reap.idRepas }}</td>
+            </tr>
+            <tr>
+                <th>NomRepas</th>
+                <td>{{ reap.nomRepas }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('reaps_index') }}">back to list</a>
+
+    <a href="{{ path('reaps_edit', {'idRepas': reap.idRepas}) }}">edit</a>
+
+    {{ include('reaps/_delete_form.html.twig') }}
+{% endblock %}
